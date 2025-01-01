@@ -21,7 +21,7 @@ app.use(petRouter)
 app.use('/form', AdoptFormRoute)
 app.use('/admin', AdminRoute)
 app.use('/payment', PaymentRoute);
-mongoose.connect('mongodb+srv://rk0750295:parathekaaalu@cluster2.gphj3.mongodb.net/')
+mongoose.connect(process.env.mongooseURL)
     .then(() => {
         console.log('Connected to DB');
         const PORT = 4000;
