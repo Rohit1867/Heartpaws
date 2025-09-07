@@ -4,10 +4,10 @@ import PetCards from './PetCards'
 const PostingPets = () => {
   const [requests, setRequests] = useState([])
   const [loading, setLoading] = useState(true)
-
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
   const fetchRequests = async () => {
     try {
-      const response = await fetch('http://localhost:4000/requests')
+      const response = await fetch(`${API_BASE}/requests`)
       if (!response.ok) {
         throw new Error('An error occurred')
       }

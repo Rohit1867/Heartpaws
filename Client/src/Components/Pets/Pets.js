@@ -5,11 +5,11 @@ const Pets = () => {
   const [filter, setFilter] = useState("all");
   const [petsData, setPetsData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await fetch('http://localhost:4000/approvedPets')
+        const response = await fetch(`${API_BASE}/approvedPets`)
         if (!response.ok) {
           throw new Error('An error occurred')
         }

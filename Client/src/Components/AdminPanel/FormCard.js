@@ -8,7 +8,7 @@ const FormCard = (props) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isApproving, setIsApproving] = useState(false);
   const [showDetailsPopup, setShowDetailsPopup] = useState(false);
-
+   const API_BASE = process.env.REACT_APP_API_BASE_URL;
   const formatTimeAgo = (updatedAt) => {
     const date = new Date(updatedAt);
     return formatDistanceToNow(date, { addSuffix: true });
@@ -17,7 +17,7 @@ const FormCard = (props) => {
   const handleApprove = async () => {
     setIsApproving(true);
     try {
-      const response = await fetch(`http://localhost:4000/approving/${props.form.petId}`, {
+      const response = await fetch(`${API_BASE}/approving/${props.form.petId}`, {
         method: 'PUT',
         body: JSON.stringify({
           email: props.form.email,
@@ -43,7 +43,7 @@ const FormCard = (props) => {
   
   const deleteFormAdoptedPet = async () => {
     try {
-      const deleteResponse = await fetch(`http://localhost:4000/form/delete/many/${props.form.petId}`, {
+      const deleteResponse = await fetch(`${API_BASE}/form/delete/many/${props.form.petId}`, {
         method: 'DELETE'
       });
       if (!deleteResponse.ok) {
@@ -59,7 +59,7 @@ const FormCard = (props) => {
   const handleReject = async () => {
     setIsDeleting(true)
     try {
-      const response = await fetch(`http://localhost:4000/form/reject/${props.form._id}`, {
+      const response = await fetch(`${API_BASE}/form/reject/${props.form._id}`, {
         method: 'DELETE'
       })
 
