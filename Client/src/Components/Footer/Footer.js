@@ -17,7 +17,7 @@ const Footer = (props) => {
         </p>
         
           
-        <p>&copy; 2024 Rohit kumawat</p>
+        <p>&copy; 2024 HeartPaws</p>
       </div>
     </footer>
   );

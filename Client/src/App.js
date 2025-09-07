@@ -4,7 +4,7 @@ import Navbar from "./Components/NavBar/Navbar";
 import Home from "./Components/Home/Home";
 import Footer from "./Components/Footer/Footer";
 import Services from "./Components/Services/Services";
-import Donate from "./Components/Donate/Donate"; 
+ 
 import Pets from "./Components/Pets/Pets";
 import AdoptForm from "./Components/AdoptForm/AdoptForm";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
@@ -56,14 +56,7 @@ const App = () => {
             </Layout>
           } 
         />
-         <Route 
-          path="/donate" 
-          element={
-            <Layout>
-              <Donate/>
-            </Layout>
-          } 
-        />
+          
         <Route 
           path="/admin" 
           element={<AdminLogin />} 

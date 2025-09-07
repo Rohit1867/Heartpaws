@@ -22,9 +22,7 @@ const Navbar = (props) => {
           <li>
             <Link to="/pets">Pets</Link>
           </li>
-          <li>
-            <Link to="/donate">Donate</Link>
-          </li>
+         
            
         </ul>
       </div>
